@@ -81,9 +81,9 @@ class DocumentoRepository {
 	 * @return Conjunto de documentos com o termo.
 	 */
 	public Collection<Documento> busca(String termo) {
-		return this.documentos.values();/*stream()
+		return this.documentos.values().stream()
 					.filter((x) -> Arrays.binarySearch(x.getTexto(), termo) > 0)
-					.collect(Collectors.toSet());*/
+					.collect(Collectors.toSet());
 	}
 
 }
