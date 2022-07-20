@@ -1,5 +1,6 @@
 package com.matheusgr.lunr.busca;
 
+import java.util.HashMap;
 import java.util.Objects;
 
 import com.matheusgr.lunr.ValidadorPadrao;
@@ -25,6 +26,17 @@ class ValidadorBusca extends ValidadorPadrao {
 		throw new IllegalArgumentException("Pelo menos um termo não deve ser vazio");
 	}
 
+	
+	
+	public void valida(HashMap<String, String> termo) {
+		Objects.requireNonNull(termo, "Conteúdo não pode ser nulo");
+		for (String t : termo.values()) {
+			if (!t.isBlank()) {
+				return;
+			}
+		}
+		throw new IllegalArgumentException("Pelo menos um termo não deve ser vazio");
+	}
 	/**
 	 * Valida o número do histórico de busca. Deve ser positivo.
 	 * 
