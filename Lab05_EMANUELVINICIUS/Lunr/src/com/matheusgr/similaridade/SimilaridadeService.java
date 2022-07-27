@@ -40,9 +40,12 @@ public class SimilaridadeService {
 	 *         semelhança entre os documentos.
 	 */
 	public double similaridade(String docId1, String docId2) {
-		this.documentoService.recuperaDocumento(docId1);
+		Optional<Document> doc = this.documentoService.recuperaDocumento(docId1);
 		// PEGA DOCUMENTO 1
+		if (doc.IsPresent() {}
+		Set<String> doc1 = new Set.of(doc.get().getTexto());
 		// PEGA DOCUMENTO 2
+		Set<String> doc2 = new Set.of(doc.get().getTexto());
 		// COLOCA TERMOS DO DOCUMENTO 1 EM UM CONJUNTO
 		// COLOCA TERMOS DO DOCUMENTO 2 EM OUTRO CONJUNTO
 		// A SIMILARIDADE É DETERMINADA PELO...
